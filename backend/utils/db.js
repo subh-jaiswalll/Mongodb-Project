@@ -1,9 +1,24 @@
-const {MongoClient} = require('mongodb');
 
-const connectDB = async()=>{
+const mongoose = require('mongoose');
 
-    const client = new MongoClient(process.env.MONGODB_URL)
+const connectDB = async () => {
 
-   await client.connect();
+    await mongoose.connect(process.env.MONGODB_URL);
+
+    console.log("Database connected");
+    
 }
+
 module.exports = connectDB;
+
+
+
+// const {MongoClient} = require('mongodb');
+
+// const connectDB = async()=>{
+
+//     const client = new MongoClient(process.env.MONGODB_URL)
+
+//    await client.connect();
+// }
+// module.exports = connectDB;
